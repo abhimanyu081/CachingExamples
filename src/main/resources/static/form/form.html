@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Add company</title>
+        <link rel="stylesheet" href="form.css">
+    </head>
+    <body>
+        <form method="post"  action="http://localhost:8080/company/add" class="dark-matter">
+    <h1>Contact Form 
+        <span>Please fill all the texts in the fields.</span>
+    </h1>
+    <label>
+        <span>Company Name :</span>
+        <input id="companyName" type="text" name="companyName" placeholder="Your Full Name" />
+    </label>
+    <label>
+        <span>Company Symbol :</span>
+        <input id="symbol" type="text" name="symbol" placeholder="enter symbol" />
+    </label>
+    
+    <label>
+        <span>short Name :</span>
+        <input id="shortName" type="text" name="companyShortName" placeholder=" enter short Name" />
+    </label>
+    <label>
+        <span>
+            date founded:
+        </span>
+        <input type="date" name="dateFounded">
+    </label>
+    <label>
+        <span>short description :</span>
+        <textarea id="shortdescription" name="shortDescription" placeholder="enter short description"></textarea>
+    </label> 
+        <label>
+        <span>long description :</span>
+        <textarea id="longdescription" name="longDescription" placeholder="enter long description"></textarea>
+    </label> 
+     <label>
+        <span>Head Quarter :</span>
+        <input id="HeadQuarter " type="text" name="headQuarter" placeholder="enter Head Quarter " />
+    </label>
+     <label>
+        <span>isActive :</span>
+        <input type="radio" name="isActive" value="1" checked> Active<br>
+        <input type="radio" name="isActive" value="0"> Inactive<br>
+        
+    </label>    
+     <label>
+        <span>&nbsp;</span> 
+        <input type="submit" class="button" value="submit" /> 
+    </label>    
+</form>
+    </body>
+</html>

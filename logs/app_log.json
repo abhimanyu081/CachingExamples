@@ -1,0 +1,11 @@
+{
+  "timeMillis" : 1479214611729,
+  "thread" : "http-nio-8080-exec-1",
+  "level" : "DEBUG",
+  "loggerName" : "com.example.controller.CompanyController",
+  "message" : "from test method ",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.slf4j.Log4jLogger",
+  "threadId" : 43,
+  "threadPriority" : 5
+}

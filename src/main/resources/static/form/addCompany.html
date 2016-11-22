@@ -1,0 +1,129 @@
+
+<html>
+    <head>
+        <!-- necessary reformed CSS -->
+<!--[if IE]>
+    <link rel="stylesheet" type="text/css" href="reformed/css/ie_fieldset_fix.css" />
+<![endif]-->
+<link rel="stylesheet" href="reformed/css/uniform.aristo.css" type="text/css" />
+<link rel="stylesheet" href="reformed/css/ui.reformed.css" type="text/css" />
+<link rel="stylesheet" href="reformed/css/reformed-form-ui-lightness/jquery-ui-1.8.7.custom.css" type="text/css" />
+<!-- end necessary reformed CSS -->
+
+<!-- necessary reformed js -->
+<script src="reformed/js/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="reformed/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="reformed/js/jquery.ui.reformed.min.js" type="text/javascript"></script>
+<!-- end necessary reformed js -->
+                        
+    </head>
+
+        <body>
+            <div class="reformed-form">
+	<form method="post" name="Addcompany" id="YOURFORMID" action="http://localhost:8080/company/add">
+		<dl>
+			<dt>
+				<label for="companyname">company name</label>
+			</dt>
+			<dd><input type="text" id="companyName" name="companyName" /></dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="shortname">company short name</label>
+			</dt>
+			<dd><input type="text" id="shortname" name="companyShortName" /></dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="foundeddate">Date Founded</label>
+			</dt>
+			<dd><input type="text" id="foundeddate" class="datepicker" name="dateFounded" /></dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="symbol">symbol</label>
+			</dt>
+			<dd><input type="text" id="symbol" name="symbol" /></dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="shortdesc">short description</label>
+			</dt>
+			<dd><input type="text" id="shortdesc" name="shortDescription" /></dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="longdescription">long description</label>
+			</dt>
+			<dd><input type="text" id="longdescription" name="longDescription" /></dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="hq">headquarter</label>
+			</dt>
+			<dd><input type="text" id="hq" name="headQuarter" /></dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="isactive">isactive</label>
+			</dt>
+			<dd>
+				<ul>
+					<li><input type="radio" id="isactive" name="isActive" value="1" />
+						<label>active</label>
+					</li>
+					<li><input type="radio" id="isactive" name="isActive" value="0" />
+						<label>inactive</label>
+					</li>
+				</ul>
+						</dd>
+		</dl>
+		<div id="submit_buttons">
+			<button type="reset">Reset</button>
+			<button type="submit">Submit</button>
+		</div>
+		</form>
+</div>
+<script>
+	<script type="text/javascript">
+$(function(){ //on doc ready
+    //set validation options
+    //(this creates range messages from max/min values)
+    $.validator.autoCreateRanges = true;
+    $.validator.setDefaults({
+        highlight: function(input) {
+            $(input).addClass("ui-state-highlight");
+        },
+        unhighlight: function(input) {
+            $(input).removeClass("ui-state-highlight");
+        },
+        errorClass: 'error_msg',
+        wrapper : 'dd',
+        errorPlacement : function(error, element) {
+            error.addClass('ui-state-error');
+            error.prepend('<span class="ui-icon ui-icon-alert"></span>');
+            error.appendTo(element.closest('dl.ui-helper-clearfix').effect('highlight', {}, 2000));
+        }
+    });
+
+    //call reformed and the validation library on your form
+    $('#YOURFORMID').reformed().validate();
+});
+
+$('#YOURFORMID').reformed({
+            styleFileInputs : true, //use the uniform plugin to style file input boxes
+            styleRadios : true, //style radios with uniform plugin
+            styleCheckboxes : true, //style checkboxes with uniform plugin
+            styleSelects : true, //style selects with uniform plugin
+            styleButtonsWithUniform : false, //style all form buttons with uniform (false = styled by jquery UI)
+            styleDatepicker : true //use jqueryUI datepicker
+}).validate();
+</script>
+                        
+	</script>
+
+
+        </body>
+
+</html>
+
